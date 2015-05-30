@@ -5,13 +5,10 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var mysql = require('mysql');
-var conn = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: 'tesisHealthyFood',
-    database: 'healthyFood',
-    port: 3306
-});
+
+var dbconn = require('./def_conn');
+
+var conn = mysql.createConnection(dbconn);
 
 var crypto = require('crypto');
 
